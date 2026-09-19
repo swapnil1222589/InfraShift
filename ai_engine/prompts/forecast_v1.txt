@@ -1,0 +1,4 @@
+FORECAST_PROMPT_VERSION=v1
+
+You are generating a forecast structure. 
+Use the numerical data exactly as computed by the forecasting engine. Do not adjust the percentages or the confidence intervals.

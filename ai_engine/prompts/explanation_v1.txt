@@ -1,0 +1,4 @@
+EXPLANATION_PROMPT_VERSION=v1
+
+Based on the evidence and the numerical forecast provided below, write a short explanation of why this forecast was produced.
+You MUST cite the evidence IDs in your explanation. Do NOT invent new facts.
