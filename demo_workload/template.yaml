@@ -1,0 +1,153 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  InfraShift Demo Workload Infrastructure as Code.
+  Deploys API Gateway (infraShift-demo-api), Lambda (infraShift-demo-lambda),
+  DynamoDB (infraShift-demo-users), CloudWatch Log Group, and IAM Roles.
+
+Globals:
+  Function:
+    Timeout: 10
+    MemorySize: 128
+    Runtime: python3.12
+
+Resources:
+  # ---------------------------------------------------------------------------
+  # DynamoDB Table
+  # ---------------------------------------------------------------------------
+  DemoUsersTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: infraShift-demo-users
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: userId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: userId
+          KeyType: HASH
+      Tags:
+        - Key: Project
+          Value: InfraShift
+        - Key: Environment
+          Value: Demo
+
+  # ---------------------------------------------------------------------------
+  # IAM Execution Role for Lambda
+  # ---------------------------------------------------------------------------
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: InfraShiftDemoLambdaRole
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: DynamoDBAccessPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - dynamodb:GetItem
+                  - dynamodb:PutItem
+                  - dynamodb:Query
+                  - dynamodb:Scan
+                Resource: !GetAtt DemoUsersTable.Arn
+
+  # ---------------------------------------------------------------------------
+  # Lambda Function
+  # ---------------------------------------------------------------------------
+  DemoLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: infraShift-demo-lambda
+      Handler: lambda_function.lambda_handler
+      CodeUri: .
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref DemoUsersTable
+          ENVIRONMENT: demo
+      Events:
+        GetUserApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref DemoHttpApi
+            Path: /users/{id}
+            Method: GET
+
+  # ---------------------------------------------------------------------------
+  # HTTP API Gateway
+  # ---------------------------------------------------------------------------
+  DemoHttpApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      Name: infraShift-demo-api
+      CorsConfiguration:
+        AllowOrigins:
+          - "*"
+        AllowMethods:
+          - GET
+          - OPTIONS
+        AllowHeaders:
+          - "*"
+
+  # ---------------------------------------------------------------------------
+  # CloudWatch Log Group for Lambda
+  # ---------------------------------------------------------------------------
+  DemoLambdaLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub "/aws/lambda/${DemoLambdaFunction}"
+      RetentionInDays: 7
+
+  # ---------------------------------------------------------------------------
+  # Backend Telemetry Read Role (Least Privilege for InfraShift Backend)
+  # ---------------------------------------------------------------------------
+  InfraShiftBackendTelemetryRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: InfraShiftBackendTelemetryRole
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ec2.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: InfraShiftTelemetryReadPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - cloudwatch:GetMetricData
+                  - cloudwatch:GetMetricStatistics
+                  - cloudwatch:ListMetrics
+                  - logs:FilterLogEvents
+                  - logs:GetLogEvents
+                  - dynamodb:DescribeTable
+                  - lambda:GetFunction
+                Resource: "*"
+
+Outputs:
+  ApiEndpoint:
+    Description: HTTP API Gateway Endpoint URL
+    Value: !Sub "https://${DemoHttpApi}.execute-api.${AWS::Region}.amazonaws.com"
+  LambdaArn:
+    Description: Lambda Function ARN
+    Value: !GetAtt DemoLambdaFunction.Arn
+  TableName:
+    Description: DynamoDB Table Name
+    Value: !Ref DemoUsersTable
+  BackendTelemetryRoleArn:
+    Description: InfraShift Backend Telemetry Role ARN
+    Value: !GetAtt InfraShiftBackendTelemetryRole.Arn

@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import ValidationError
 
-from app.api import analyses, github, health, projects
+from app.api import analyses, demo_api, github, health, projects
 from app.api.analyses import start_analysis_for_project
 from app.core.config import settings
 from app.core.errors import (
@@ -129,6 +129,8 @@ app.include_router(health.router, prefix="/api/v1", tags=["Health"])
 app.include_router(projects.router, prefix="/api/v1/projects", tags=["Projects"])
 app.include_router(analyses.router, prefix="/api/v1/analyses", tags=["Analyses"])
 app.include_router(github.router, prefix="/api/v1/github", tags=["GitHub"])
+app.include_router(demo_api.router, prefix="/api", tags=["Demo Workload API"])
+app.include_router(demo_api.router, prefix="/api/v1", tags=["Demo Workload API"])
 
 
 # ---------------------------------------------------------------------------

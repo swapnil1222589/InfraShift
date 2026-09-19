@@ -1,5 +1,8 @@
-"""Shared test fixtures and configuration."""
-from __future__ import annotations
+import os
+import sys
+
+# Ensure workspace root is in sys.path so 'aws' module can be imported
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 import pytest
 from fastapi.testclient import TestClient
