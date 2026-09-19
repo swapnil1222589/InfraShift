@@ -1,0 +1,1033 @@
+[
+  {
+    "deployment_id": "dep_100",
+    "timestamp": "2026-03-12T21:44:24.430930",
+    "resource_type": "lambda",
+    "resource_id": "notification-func-2",
+    "change_type": "lambda_memory_decrease",
+    "details": {
+      "old_memory_mb": 2048,
+      "new_memory_mb": 1024
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 145.90434889144979,
+      "cost_usd": 217.5939075359223,
+      "invocations": 137132.68064390554
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 202.58644665240774,
+      "cost_usd": 175.80042427102228,
+      "invocations": 137132.68064390554
+    }
+  },
+  {
+    "deployment_id": "dep_101",
+    "timestamp": "2025-11-21T21:44:24.431009",
+    "resource_type": "dynamodb",
+    "resource_id": "",
+    "change_type": "dynamodb_capacity_increase",
+    "details": {
+      "old_rcu": 100,
+      "new_rcu": 500
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 20.0,
+      "cost_usd": 50.0,
+      "invocations": 1000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 18.0,
+      "cost_usd": 70.0,
+      "invocations": 1000
+    }
+  },
+  {
+    "deployment_id": "dep_102",
+    "timestamp": "2026-03-21T21:44:24.431021",
+    "resource_type": "api_gateway",
+    "resource_id": "",
+    "change_type": "api_gateway_caching_enable",
+    "details": {
+      "caching_enabled": true
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 150.0,
+      "cost_usd": 20.0,
+      "invocations": 200000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 50.0,
+      "cost_usd": 22.0,
+      "invocations": 200000
+    }
+  },
+  {
+    "deployment_id": "dep_103",
+    "timestamp": "2025-12-09T21:44:24.431028",
+    "resource_type": "lambda",
+    "resource_id": "notification-func-2",
+    "change_type": "lambda_memory_decrease",
+    "details": {
+      "old_memory_mb": 1024,
+      "new_memory_mb": 512
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 81.46694228330688,
+      "cost_usd": 119.54692444816386,
+      "invocations": 96700.55111758706
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 94.70722417153996,
+      "cost_usd": 101.93519671253458,
+      "invocations": 96700.55111758706
+    }
+  },
+  {
+    "deployment_id": "dep_104",
+    "timestamp": "2025-10-30T21:44:24.431040",
+    "resource_type": "lambda",
+    "resource_id": "notification-func-3",
+    "change_type": "lambda_memory_decrease",
+    "details": {
+      "old_memory_mb": 2048,
+      "new_memory_mb": 1024
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 73.03083315620455,
+      "cost_usd": 259.1090745581846,
+      "invocations": 105603.24946181341
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 81.41251180123032,
+      "cost_usd": 207.6113242604924,
+      "invocations": 105603.24946181341
+    }
+  },
+  {
+    "deployment_id": "dep_105",
+    "timestamp": "2026-08-22T21:44:24.431051",
+    "resource_type": "lambda",
+    "resource_id": "notification-func-1",
+    "change_type": "lambda_memory_decrease",
+    "details": {
+      "old_memory_mb": 1024,
+      "new_memory_mb": 512
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 71.2291620685287,
+      "cost_usd": 241.06568783447622,
+      "invocations": 125451.97377846684
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 99.17544399382426,
+      "cost_usd": 194.19141225870527,
+      "invocations": 125451.97377846684
+    }
+  },
+  {
+    "deployment_id": "dep_106",
+    "timestamp": "2026-07-25T21:44:24.431061",
+    "resource_type": "dynamodb",
+    "resource_id": "",
+    "change_type": "dynamodb_capacity_increase",
+    "details": {
+      "old_rcu": 100,
+      "new_rcu": 500
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 20.0,
+      "cost_usd": 50.0,
+      "invocations": 1000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 18.0,
+      "cost_usd": 70.0,
+      "invocations": 1000
+    }
+  },
+  {
+    "deployment_id": "dep_107",
+    "timestamp": "2026-06-26T21:44:24.431073",
+    "resource_type": "dynamodb",
+    "resource_id": "",
+    "change_type": "dynamodb_capacity_increase",
+    "details": {
+      "old_rcu": 100,
+      "new_rcu": 500
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 20.0,
+      "cost_usd": 50.0,
+      "invocations": 1000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 18.0,
+      "cost_usd": 70.0,
+      "invocations": 1000
+    }
+  },
+  {
+    "deployment_id": "dep_108",
+    "timestamp": "2026-04-09T21:44:24.431079",
+    "resource_type": "lambda",
+    "resource_id": "payment-func-1",
+    "change_type": "lambda_memory_increase",
+    "details": {
+      "old_memory_mb": 256,
+      "new_memory_mb": 512
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 321.14392129177537,
+      "cost_usd": 49.34495871809808,
+      "invocations": 13717.89314923014
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 229.73280315220757,
+      "cost_usd": 55.51776238162628,
+      "invocations": 13958.362491007787
+    }
+  },
+  {
+    "deployment_id": "dep_109",
+    "timestamp": "2026-04-08T21:44:24.431091",
+    "resource_type": "api_gateway",
+    "resource_id": "",
+    "change_type": "api_gateway_caching_enable",
+    "details": {
+      "caching_enabled": true
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 150.0,
+      "cost_usd": 20.0,
+      "invocations": 200000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 50.0,
+      "cost_usd": 22.0,
+      "invocations": 200000
+    }
+  },
+  {
+    "deployment_id": "dep_110",
+    "timestamp": "2026-08-04T21:44:24.431097",
+    "resource_type": "api_gateway",
+    "resource_id": "",
+    "change_type": "api_gateway_caching_enable",
+    "details": {
+      "caching_enabled": true
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 150.0,
+      "cost_usd": 20.0,
+      "invocations": 200000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 50.0,
+      "cost_usd": 22.0,
+      "invocations": 200000
+    }
+  },
+  {
+    "deployment_id": "dep_111",
+    "timestamp": "2026-05-21T21:44:24.431102",
+    "resource_type": "dynamodb",
+    "resource_id": "",
+    "change_type": "dynamodb_capacity_increase",
+    "details": {
+      "old_rcu": 100,
+      "new_rcu": 500
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 20.0,
+      "cost_usd": 50.0,
+      "invocations": 1000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 18.0,
+      "cost_usd": 70.0,
+      "invocations": 1000
+    }
+  },
+  {
+    "deployment_id": "dep_112",
+    "timestamp": "2026-07-10T21:44:24.431107",
+    "resource_type": "lambda",
+    "resource_id": "payment-func-4",
+    "change_type": "lambda_memory_increase",
+    "details": {
+      "old_memory_mb": 512,
+      "new_memory_mb": 1024
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 246.71714826869518,
+      "cost_usd": 23.35464828646545,
+      "invocations": 36978.46262315827
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 189.69507839776082,
+      "cost_usd": 25.13993980174804,
+      "invocations": 35981.17049534403
+    }
+  },
+  {
+    "deployment_id": "dep_113",
+    "timestamp": "2026-05-31T21:44:24.431120",
+    "resource_type": "lambda",
+    "resource_id": "notification-func-3",
+    "change_type": "lambda_memory_decrease",
+    "details": {
+      "old_memory_mb": 1024,
+      "new_memory_mb": 512
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 61.29947866058419,
+      "cost_usd": 169.56336534366775,
+      "invocations": 82310.29049818894
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 69.89224355269029,
+      "cost_usd": 134.65352975273805,
+      "invocations": 82310.29049818894
+    }
+  },
+  {
+    "deployment_id": "dep_114",
+    "timestamp": "2026-04-14T21:44:24.431129",
+    "resource_type": "lambda",
+    "resource_id": "payment-func-2",
+    "change_type": "lambda_memory_increase",
+    "details": {
+      "old_memory_mb": 256,
+      "new_memory_mb": 512
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 377.3374261792283,
+      "cost_usd": 47.19311665520036,
+      "invocations": 18782.6044540519
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 331.5477971253357,
+      "cost_usd": 49.57889030028694,
+      "invocations": 18753.168921141892
+    }
+  },
+  {
+    "deployment_id": "dep_115",
+    "timestamp": "2026-01-22T21:44:24.431138",
+    "resource_type": "dynamodb",
+    "resource_id": "",
+    "change_type": "dynamodb_capacity_increase",
+    "details": {
+      "old_rcu": 100,
+      "new_rcu": 500
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 20.0,
+      "cost_usd": 50.0,
+      "invocations": 1000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 18.0,
+      "cost_usd": 70.0,
+      "invocations": 1000
+    }
+  },
+  {
+    "deployment_id": "dep_116",
+    "timestamp": "2026-06-21T21:44:24.431144",
+    "resource_type": "api_gateway",
+    "resource_id": "",
+    "change_type": "api_gateway_caching_enable",
+    "details": {
+      "caching_enabled": true
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 150.0,
+      "cost_usd": 20.0,
+      "invocations": 200000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 50.0,
+      "cost_usd": 22.0,
+      "invocations": 200000
+    }
+  },
+  {
+    "deployment_id": "dep_117",
+    "timestamp": "2025-11-01T21:44:24.431151",
+    "resource_type": "lambda",
+    "resource_id": "notification-func-1",
+    "change_type": "lambda_memory_decrease",
+    "details": {
+      "old_memory_mb": 2048,
+      "new_memory_mb": 1024
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 80.68936653026564,
+      "cost_usd": 172.50363673434975,
+      "invocations": 61209.44479582197
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 88.92934908814138,
+      "cost_usd": 131.7818303922344,
+      "invocations": 61209.44479582197
+    }
+  },
+  {
+    "deployment_id": "dep_118",
+    "timestamp": "2026-01-29T21:44:24.431161",
+    "resource_type": "lambda",
+    "resource_id": "payment-func-1",
+    "change_type": "lambda_memory_increase",
+    "details": {
+      "old_memory_mb": 512,
+      "new_memory_mb": 1024
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 206.03690693647374,
+      "cost_usd": 49.963593361582404,
+      "invocations": 15114.786562182459
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 182.7213300102557,
+      "cost_usd": 52.80734730443884,
+      "invocations": 15782.23533817493
+    }
+  },
+  {
+    "deployment_id": "dep_119",
+    "timestamp": "2026-01-30T21:44:24.431172",
+    "resource_type": "lambda",
+    "resource_id": "notification-func-2",
+    "change_type": "lambda_memory_decrease",
+    "details": {
+      "old_memory_mb": 2048,
+      "new_memory_mb": 1024
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 143.22386207392805,
+      "cost_usd": 283.17565043390425,
+      "invocations": 83423.54979295778
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 172.67148077291398,
+      "cost_usd": 200.08591698552672,
+      "invocations": 83423.54979295778
+    }
+  },
+  {
+    "deployment_id": "dep_120",
+    "timestamp": "2026-02-20T21:44:24.431181",
+    "resource_type": "api_gateway",
+    "resource_id": "",
+    "change_type": "api_gateway_caching_enable",
+    "details": {
+      "caching_enabled": true
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 150.0,
+      "cost_usd": 20.0,
+      "invocations": 200000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 50.0,
+      "cost_usd": 22.0,
+      "invocations": 200000
+    }
+  },
+  {
+    "deployment_id": "dep_121",
+    "timestamp": "2026-08-05T21:44:24.431186",
+    "resource_type": "dynamodb",
+    "resource_id": "",
+    "change_type": "dynamodb_capacity_increase",
+    "details": {
+      "old_rcu": 100,
+      "new_rcu": 500
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 20.0,
+      "cost_usd": 50.0,
+      "invocations": 1000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 18.0,
+      "cost_usd": 70.0,
+      "invocations": 1000
+    }
+  },
+  {
+    "deployment_id": "dep_122",
+    "timestamp": "2025-11-22T21:44:24.431192",
+    "resource_type": "api_gateway",
+    "resource_id": "",
+    "change_type": "api_gateway_caching_enable",
+    "details": {
+      "caching_enabled": true
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 150.0,
+      "cost_usd": 20.0,
+      "invocations": 200000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 50.0,
+      "cost_usd": 22.0,
+      "invocations": 200000
+    }
+  },
+  {
+    "deployment_id": "dep_123",
+    "timestamp": "2025-11-12T21:44:24.431197",
+    "resource_type": "dynamodb",
+    "resource_id": "",
+    "change_type": "dynamodb_capacity_increase",
+    "details": {
+      "old_rcu": 100,
+      "new_rcu": 500
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 20.0,
+      "cost_usd": 50.0,
+      "invocations": 1000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 18.0,
+      "cost_usd": 70.0,
+      "invocations": 1000
+    }
+  },
+  {
+    "deployment_id": "dep_124",
+    "timestamp": "2026-04-02T21:44:24.431202",
+    "resource_type": "api_gateway",
+    "resource_id": "",
+    "change_type": "api_gateway_caching_enable",
+    "details": {
+      "caching_enabled": true
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 150.0,
+      "cost_usd": 20.0,
+      "invocations": 200000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 50.0,
+      "cost_usd": 22.0,
+      "invocations": 200000
+    }
+  },
+  {
+    "deployment_id": "dep_125",
+    "timestamp": "2026-02-24T21:44:24.431207",
+    "resource_type": "lambda",
+    "resource_id": "payment-func-3",
+    "change_type": "lambda_memory_increase",
+    "details": {
+      "old_memory_mb": 512,
+      "new_memory_mb": 1024
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 304.8223157539986,
+      "cost_usd": 13.236572068920157,
+      "invocations": 29249.0536737461
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 259.3466187504935,
+      "cost_usd": 14.735875350602793,
+      "invocations": 30007.949644727727
+    }
+  },
+  {
+    "deployment_id": "dep_126",
+    "timestamp": "2026-09-09T21:44:24.431215",
+    "resource_type": "lambda",
+    "resource_id": "notification-func-1",
+    "change_type": "lambda_memory_decrease",
+    "details": {
+      "old_memory_mb": 1024,
+      "new_memory_mb": 512
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 95.74350913867414,
+      "cost_usd": 269.1864589961705,
+      "invocations": 57785.402033310165
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 115.59103850798627,
+      "cost_usd": 207.8212728680617,
+      "invocations": 57785.402033310165
+    }
+  },
+  {
+    "deployment_id": "dep_127",
+    "timestamp": "2025-11-14T21:44:24.431224",
+    "resource_type": "api_gateway",
+    "resource_id": "",
+    "change_type": "api_gateway_caching_enable",
+    "details": {
+      "caching_enabled": true
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 150.0,
+      "cost_usd": 20.0,
+      "invocations": 200000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 50.0,
+      "cost_usd": 22.0,
+      "invocations": 200000
+    }
+  },
+  {
+    "deployment_id": "dep_128",
+    "timestamp": "2026-06-13T21:44:24.431231",
+    "resource_type": "lambda",
+    "resource_id": "notification-func-1",
+    "change_type": "lambda_memory_decrease",
+    "details": {
+      "old_memory_mb": 2048,
+      "new_memory_mb": 1024
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 90.87032370757382,
+      "cost_usd": 122.81223512981543,
+      "invocations": 53800.38479254446
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 114.33654559178485,
+      "cost_usd": 86.84653651188331,
+      "invocations": 53800.38479254446
+    }
+  },
+  {
+    "deployment_id": "dep_129",
+    "timestamp": "2026-04-20T21:44:24.431239",
+    "resource_type": "api_gateway",
+    "resource_id": "",
+    "change_type": "api_gateway_caching_enable",
+    "details": {
+      "caching_enabled": true
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 150.0,
+      "cost_usd": 20.0,
+      "invocations": 200000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 50.0,
+      "cost_usd": 22.0,
+      "invocations": 200000
+    }
+  },
+  {
+    "deployment_id": "dep_130",
+    "timestamp": "2025-11-28T21:44:24.431245",
+    "resource_type": "lambda",
+    "resource_id": "notification-func-1",
+    "change_type": "lambda_memory_decrease",
+    "details": {
+      "old_memory_mb": 2048,
+      "new_memory_mb": 1024
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 58.354254436300444,
+      "cost_usd": 255.2170948028562,
+      "invocations": 143992.65928498883
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 76.98424478529982,
+      "cost_usd": 228.551065826975,
+      "invocations": 143992.65928498883
+    }
+  },
+  {
+    "deployment_id": "dep_131",
+    "timestamp": "2026-07-31T21:44:24.431252",
+    "resource_type": "dynamodb",
+    "resource_id": "",
+    "change_type": "dynamodb_capacity_increase",
+    "details": {
+      "old_rcu": 100,
+      "new_rcu": 500
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 20.0,
+      "cost_usd": 50.0,
+      "invocations": 1000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 18.0,
+      "cost_usd": 70.0,
+      "invocations": 1000
+    }
+  },
+  {
+    "deployment_id": "dep_132",
+    "timestamp": "2025-11-27T21:44:24.431258",
+    "resource_type": "api_gateway",
+    "resource_id": "",
+    "change_type": "api_gateway_caching_enable",
+    "details": {
+      "caching_enabled": true
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 150.0,
+      "cost_usd": 20.0,
+      "invocations": 200000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 50.0,
+      "cost_usd": 22.0,
+      "invocations": 200000
+    }
+  },
+  {
+    "deployment_id": "dep_133",
+    "timestamp": "2026-09-02T21:44:24.431272",
+    "resource_type": "lambda",
+    "resource_id": "notification-func-3",
+    "change_type": "lambda_memory_decrease",
+    "details": {
+      "old_memory_mb": 2048,
+      "new_memory_mb": 1024
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 140.34285918056895,
+      "cost_usd": 209.31809876286246,
+      "invocations": 115101.11079831762
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 162.6625567309185,
+      "cost_usd": 184.1651370938111,
+      "invocations": 115101.11079831762
+    }
+  },
+  {
+    "deployment_id": "dep_134",
+    "timestamp": "2026-02-02T21:44:24.431285",
+    "resource_type": "dynamodb",
+    "resource_id": "",
+    "change_type": "dynamodb_capacity_increase",
+    "details": {
+      "old_rcu": 100,
+      "new_rcu": 500
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 20.0,
+      "cost_usd": 50.0,
+      "invocations": 1000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 18.0,
+      "cost_usd": 70.0,
+      "invocations": 1000
+    }
+  },
+  {
+    "deployment_id": "dep_135",
+    "timestamp": "2026-06-24T21:44:24.431291",
+    "resource_type": "api_gateway",
+    "resource_id": "",
+    "change_type": "api_gateway_caching_enable",
+    "details": {
+      "caching_enabled": true
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 150.0,
+      "cost_usd": 20.0,
+      "invocations": 200000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 50.0,
+      "cost_usd": 22.0,
+      "invocations": 200000
+    }
+  },
+  {
+    "deployment_id": "dep_136",
+    "timestamp": "2026-08-05T21:44:24.431296",
+    "resource_type": "api_gateway",
+    "resource_id": "",
+    "change_type": "api_gateway_caching_enable",
+    "details": {
+      "caching_enabled": true
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 150.0,
+      "cost_usd": 20.0,
+      "invocations": 200000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 50.0,
+      "cost_usd": 22.0,
+      "invocations": 200000
+    }
+  },
+  {
+    "deployment_id": "dep_137",
+    "timestamp": "2026-05-18T21:44:24.431301",
+    "resource_type": "api_gateway",
+    "resource_id": "",
+    "change_type": "api_gateway_caching_enable",
+    "details": {
+      "caching_enabled": true
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 150.0,
+      "cost_usd": 20.0,
+      "invocations": 200000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 50.0,
+      "cost_usd": 22.0,
+      "invocations": 200000
+    }
+  },
+  {
+    "deployment_id": "dep_138",
+    "timestamp": "2026-02-28T21:44:24.431306",
+    "resource_type": "api_gateway",
+    "resource_id": "",
+    "change_type": "api_gateway_caching_enable",
+    "details": {
+      "caching_enabled": true
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 150.0,
+      "cost_usd": 20.0,
+      "invocations": 200000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 50.0,
+      "cost_usd": 22.0,
+      "invocations": 200000
+    }
+  },
+  {
+    "deployment_id": "dep_139",
+    "timestamp": "2026-05-18T21:44:24.431313",
+    "resource_type": "api_gateway",
+    "resource_id": "",
+    "change_type": "api_gateway_caching_enable",
+    "details": {
+      "caching_enabled": true
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 150.0,
+      "cost_usd": 20.0,
+      "invocations": 200000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 50.0,
+      "cost_usd": 22.0,
+      "invocations": 200000
+    }
+  },
+  {
+    "deployment_id": "dep_140",
+    "timestamp": "2026-02-12T21:44:24.431317",
+    "resource_type": "api_gateway",
+    "resource_id": "",
+    "change_type": "api_gateway_caching_enable",
+    "details": {
+      "caching_enabled": true
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 150.0,
+      "cost_usd": 20.0,
+      "invocations": 200000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 50.0,
+      "cost_usd": 22.0,
+      "invocations": 200000
+    }
+  },
+  {
+    "deployment_id": "dep_141",
+    "timestamp": "2026-06-05T21:44:24.431323",
+    "resource_type": "lambda",
+    "resource_id": "payment-func-2",
+    "change_type": "lambda_memory_increase",
+    "details": {
+      "old_memory_mb": 128,
+      "new_memory_mb": 256
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 451.45756907779446,
+      "cost_usd": 34.84258411512566,
+      "invocations": 47348.33334642532
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 338.54897143995,
+      "cost_usd": 38.23464563426426,
+      "invocations": 49183.5751935253
+    }
+  },
+  {
+    "deployment_id": "dep_142",
+    "timestamp": "2026-08-18T21:44:24.431331",
+    "resource_type": "lambda",
+    "resource_id": "payment-func-4",
+    "change_type": "lambda_memory_increase",
+    "details": {
+      "old_memory_mb": 128,
+      "new_memory_mb": 256
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 458.4316587684651,
+      "cost_usd": 44.8918829841343,
+      "invocations": 13698.99988997529
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 367.4557836298051,
+      "cost_usd": 49.12892040305314,
+      "invocations": 13612.633903871067
+    }
+  },
+  {
+    "deployment_id": "dep_143",
+    "timestamp": "2026-08-29T21:44:24.431340",
+    "resource_type": "api_gateway",
+    "resource_id": "",
+    "change_type": "api_gateway_caching_enable",
+    "details": {
+      "caching_enabled": true
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 150.0,
+      "cost_usd": 20.0,
+      "invocations": 200000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 50.0,
+      "cost_usd": 22.0,
+      "invocations": 200000
+    }
+  },
+  {
+    "deployment_id": "dep_144",
+    "timestamp": "2026-06-07T21:44:24.431345",
+    "resource_type": "lambda",
+    "resource_id": "payment-func-1",
+    "change_type": "lambda_memory_increase",
+    "details": {
+      "old_memory_mb": 128,
+      "new_memory_mb": 256
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 215.18450188294548,
+      "cost_usd": 18.864397324029397,
+      "invocations": 35873.76711486741
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 184.4017547228771,
+      "cost_usd": 21.59521621407294,
+      "invocations": 37384.21093097614
+    }
+  },
+  {
+    "deployment_id": "dep_145",
+    "timestamp": "2026-06-30T21:44:24.431354",
+    "resource_type": "dynamodb",
+    "resource_id": "",
+    "change_type": "dynamodb_capacity_increase",
+    "details": {
+      "old_rcu": 100,
+      "new_rcu": 500
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 20.0,
+      "cost_usd": 50.0,
+      "invocations": 1000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 18.0,
+      "cost_usd": 70.0,
+      "invocations": 1000
+    }
+  },
+  {
+    "deployment_id": "dep_146",
+    "timestamp": "2026-06-28T21:44:24.431359",
+    "resource_type": "api_gateway",
+    "resource_id": "",
+    "change_type": "api_gateway_caching_enable",
+    "details": {
+      "caching_enabled": true
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 150.0,
+      "cost_usd": 20.0,
+      "invocations": 200000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 50.0,
+      "cost_usd": 22.0,
+      "invocations": 200000
+    }
+  },
+  {
+    "deployment_id": "dep_147",
+    "timestamp": "2026-05-02T21:44:24.431364",
+    "resource_type": "lambda",
+    "resource_id": "notification-func-3",
+    "change_type": "lambda_memory_decrease",
+    "details": {
+      "old_memory_mb": 1024,
+      "new_memory_mb": 512
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 76.68122393108897,
+      "cost_usd": 204.0304892449013,
+      "invocations": 70496.47148658428
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 97.50753864602126,
+      "cost_usd": 175.1074507495552,
+      "invocations": 70496.47148658428
+    }
+  },
+  {
+    "deployment_id": "dep_148",
+    "timestamp": "2026-05-25T21:44:24.431374",
+    "resource_type": "api_gateway",
+    "resource_id": "",
+    "change_type": "api_gateway_caching_enable",
+    "details": {
+      "caching_enabled": true
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 150.0,
+      "cost_usd": 20.0,
+      "invocations": 200000
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 50.0,
+      "cost_usd": 22.0,
+      "invocations": 200000
+    }
+  },
+  {
+    "deployment_id": "dep_149",
+    "timestamp": "2026-08-20T21:44:24.431382",
+    "resource_type": "lambda",
+    "resource_id": "payment-func-5",
+    "change_type": "lambda_memory_increase",
+    "details": {
+      "old_memory_mb": 256,
+      "new_memory_mb": 512
+    },
+    "baseline_metrics": {
+      "latency_p95_ms": 384.39379490588175,
+      "cost_usd": 31.247938447013194,
+      "invocations": 36283.026071274435
+    },
+    "observed_metrics": {
+      "latency_p95_ms": 275.5693529428502,
+      "cost_usd": 36.68996017582852,
+      "invocations": 37340.17445447449
+    }
+  }
+]

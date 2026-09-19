@@ -1,0 +1,5 @@
+RECOMMENDATION_PROMPT_VERSION=v1
+
+Based on the explanation and numerical forecast, return a JSON string with two keys:
+"assumptions": List of strings (what assumptions were made in the forecast)
+"recommendations": List of strings (what should the engineer test/monitor/review before deployment)
