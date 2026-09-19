@@ -1,0 +1,36 @@
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "UP",  # pyupgrade
+    "ANN", # flake8-annotations (partial)
+    "RET", # flake8-return
+    "SIM", # flake8-simplify
+]
+ignore = [
+    "ANN101",  # Missing type annotation for `self`
+    "ANN102",  # Missing type annotation for `cls`
+    "ANN201",  # Missing return type annotation for public functions (relax for FastAPI)
+    "ANN202",  # Missing return type annotation for private functions
+    "ANN401",  # Dynamically typed expressions (Any) are disallowed
+    "B008",    # Do not perform function call in default arguments (FastAPI Depends)
+    "E501",    # Line too long (handled by formatter)
+    "RET504",  # Unnecessary assignment before `return`
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["ANN", "S101"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+markers = [
+    "aws: tests that require real AWS credentials (LIVE_AWS=true)",
+]

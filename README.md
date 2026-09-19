@@ -1,47 +1,60 @@
 # InfraShift
 
-Predict the infrastructure impact of your code before production.
+## Problem
 
-## Project Overview
-InfraShift is an AWS-native pre-deployment infrastructure impact intelligence platform. It analyzes GitHub Pull Requests to detect changed components, cross-references them against real AWS infrastructure/telemetry, and utilizes AI to forecast cost and performance impacts *before* deployment.
-
-## Problem Statement
-Deploying code changes can have unintended consequences on cloud infrastructure costs and performance. Developers often lack visibility into these impacts during the PR review phase.
+Engineering teams deploy code changes without knowing their infrastructure impact until **after** an incident occurs. Manual risk assessment is slow, error-prone, and doesn't scale with CI/CD velocity.
 
 ## Solution
-By automatically analyzing PRs and fetching real AWS CloudWatch metrics, InfraShift empowers teams with a strict, evidence-based AI forecast of the deployment's impact.
+
+InfraShift analyzes a GitHub Pull Request **before** deployment and returns:
+- Predicted infrastructure risk (Low/Medium/High/Critical)
+- AI-powered forecast (invocations, latency, error rate changes)
+- Recommended actions with evidence
+- Confidence scores with uncertainty flags
 
 ## Architecture
-- **GitHub**: Triggers webhooks on PRs.
-- **Backend (FastAPI)**: Orchestrates the analysis, persists data, and serves the UI.
-- **AI/Forecasting**: LLM-driven impact analysis using AWS telemetry context.
-- **AWS Infrastructure**: DynamoDB for storage, CloudWatch for real-time read-only metrics.
-- **Frontend**: React/Vite dashboard for visualization.
 
-## Team Ownership
-- **Person 1**: AI/Forecasting
-- **Person 2**: AWS/Infrastructure
-- **Person 3**: Backend/Data Engineering
-- **Person 4**: Frontend UI/UX
-
-## Status
-- **Backend**: MVP ready for team integration.
-- **AWS Integration**: Read-only Boto3 integration built. *Real AWS integration requires configured AWS credentials and AWS resources.*
-- **AI Integration**: Strict Pydantic interface defined and mocked.
-- **Frontend Integration**: API v1 published with Swagger docs.
-
-## Quick Start (Local Backend)
-```bash
-cd backend
-python -m venv venv
-# Windows: .\\venv\\Scripts\\activate | Mac/Linux: source venv/bin/activate
-pip install -r requirements.txt
-uvicorn app.main:app --reload
+```
+GitHub PR  →  InfraShift Backend  →  AI Analysis  →  Risk Report
+                     ↕
+              AWS Evidence + CloudWatch
 ```
 
-## Backend API & Testing
-- **Swagger URL**: `http://localhost:8000/docs`
-- **Testing**: Run `pytest` inside the `backend` folder.
+## Team Roles
 
-## Environment Variables
-See `backend/.env.example`. Controls include `LOCAL_MODE`, `LIVE_AWS`, `MOCK_AI`, and `MOCK_GITHUB`.
+| Role | Responsibility |
+|------|---------------|
+| **Team Lead / Backend & Data** | REST API, GitHub integration, analysis pipeline, AWS/DynamoDB, testing |
+| **AWS / Infrastructure** | DynamoDB tables, IAM policies, CloudWatch integration, AWS resource discovery |
+| **AI / Forecasting** | Real AI adapter (Bedrock/Strands), impact models, confidence tuning |
+| **Frontend / Developer Experience** | React UI, PR widgets, analysis dashboard, GitHub App |
+
+## Backend Status
+
+- [x] FastAPI REST API with all required endpoints
+- [x] GitHub webhook with HMAC-SHA256 validation
+- [x] Idempotent analysis creation
+- [x] Analysis pipeline worker (GitHub → AWS → CloudWatch → AI)
+- [x] Mock implementations for all external services
+- [x] DynamoDB + local in-memory repositories
+- [x] Structured audit logging
+- [x] Deployment outcome recording
+- [x] 92 passing tests
+- [x] Ruff linting clean
+
+## Local Setup
+
+```bash
+cd infrashift-backend/backend
+python -m venv venv
+venv\Scripts\activate        # Windows
+# source venv/bin/activate   # macOS/Linux
+pip install -r requirements-dev.txt
+uvicorn app.main:app --reload --port 8000
+```
+
+Then visit: **http://localhost:8000/docs**
+
+## Integration
+
+See [backend/INTEGRATION.md](backend/INTEGRATION.md) for full API contracts and integration guide.
