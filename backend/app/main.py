@@ -1,8 +1,12 @@
-"""InfraShift FastAPI application entry point."""
-from __future__ import annotations
-
+import os
+import sys
 import uuid
 from contextlib import asynccontextmanager
+
+# Ensure workspace root is in sys.path for importing 'aws' package
+_WORKSPACE_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+if _WORKSPACE_ROOT not in sys.path:
+    sys.path.insert(0, _WORKSPACE_ROOT)
 
 from fastapi import BackgroundTasks, FastAPI, Request, status
 from fastapi.middleware.cors import CORSMiddleware

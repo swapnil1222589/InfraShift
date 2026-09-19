@@ -17,6 +17,7 @@ def configure_logging(log_level: str = "INFO") -> None:
 
     handler = logging.StreamHandler(sys.stdout)
     handler.setFormatter(formatter)
+    handler.addFilter(RequestIdFilter())
 
     root = logging.getLogger()
     root.setLevel(numeric_level)
@@ -38,7 +39,8 @@ class RequestIdFilter(logging.Filter):
         self.request_id = request_id
 
     def filter(self, record: logging.LogRecord) -> bool:  # noqa: A003
-        record.request_id = self.request_id  # type: ignore[attr-defined]
+        if not hasattr(record, "request_id"):
+            record.request_id = self.request_id  # type: ignore[attr-defined]
         return True
 
 
