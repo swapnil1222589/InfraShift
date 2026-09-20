@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContext';
 import {
   Layers,
   Search,
@@ -7,6 +9,7 @@ import {
   Globe,
   Server,
   Sparkles,
+  LogOut,
 } from 'lucide-react';
 import { GithubIcon } from '../common/Icons';
 import { mockProjects, mockEnvironments } from '../../mock/projects';
@@ -29,6 +32,15 @@ export const Header: React.FC<HeaderProps> = ({
   const [projectDropdownOpen, setProjectDropdownOpen] = useState(false);
   const [envDropdownOpen, setEnvDropdownOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
+  const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
+  
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
 
   const activeProject = mockProjects.find((p) => p.id === currentProjectId) || mockProjects[0];
   const activeEnv = mockEnvironments.find((e) => e.id === currentEnvId) || mockEnvironments[0];
@@ -53,10 +65,10 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
         </div>
 
-        <div className="h-5 w-px bg-slate-800 hidden sm:block" />
+        <div className="h-5 w-px bg-slate-800 hidden lg:block" />
 
         {/* Project Selector */}
-        <div className="relative">
+        <div className="relative hidden md:block">
           <button
             onClick={() => {
               setProjectDropdownOpen(!projectDropdownOpen);
@@ -94,7 +106,7 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* Environment Selector */}
-        <div className="relative hidden sm:block">
+        <div className="relative hidden lg:block">
           <button
             onClick={() => {
               setEnvDropdownOpen(!envDropdownOpen);
@@ -199,7 +211,7 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* GitHub Link */}
         <a
-          href="https://github.com/aws-samples"
+          href="https://github.com/swapnil1222589/InfraShift"
           target="_blank"
           rel="noreferrer"
           className="p-1.5 text-slate-400 hover:text-slate-200 rounded-md hover:bg-slate-900 transition hidden sm:block"
@@ -209,14 +221,31 @@ export const Header: React.FC<HeaderProps> = ({
         </a>
 
         {/* User Profile Pill */}
-        <div className="flex items-center gap-2 pl-2 border-l border-slate-800">
-          <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-amber-600 to-orange-400 text-slate-950 font-bold text-xs flex items-center justify-center ring-1 ring-slate-700">
-            SC
-          </div>
-          <div className="hidden xl:flex flex-col text-left">
-            <span className="text-xs font-medium text-slate-200 leading-tight">Sarah Chen</span>
-            <span className="text-[10px] text-slate-500 font-mono leading-tight">DevOps Lead</span>
-          </div>
+        <div className="relative">
+          <button
+            onClick={() => setProfileDropdownOpen(!profileDropdownOpen)}
+            className="flex items-center gap-2 pl-2 border-l border-slate-800 focus:outline-none hover:opacity-80 transition"
+          >
+            <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-amber-600 to-orange-400 text-slate-950 font-bold text-xs flex items-center justify-center ring-1 ring-slate-700 shrink-0">
+              {user?.initials || 'DE'}
+            </div>
+            <div className="hidden xl:flex flex-col text-left">
+              <span className="text-xs font-medium text-slate-200 leading-tight">{user?.name || 'Demo Engineer'}</span>
+              <span className="text-[10px] text-slate-500 font-mono leading-tight">{user?.role || 'Platform Engineer'}</span>
+            </div>
+          </button>
+          
+          {profileDropdownOpen && (
+            <div className="absolute right-0 top-full mt-2 w-48 bg-slate-900 border border-slate-800 rounded-lg shadow-xl py-1 z-50">
+              <button
+                onClick={handleLogout}
+                className="w-full text-left px-4 py-2 text-xs flex items-center gap-2 text-rose-400 hover:bg-slate-800/60 transition"
+              >
+                <LogOut className="w-3.5 h-3.5" />
+                <span>Log Out</span>
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </header>

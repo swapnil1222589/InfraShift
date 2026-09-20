@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { Card } from '../common/Card';
 import { Recommendation, RecommendationStatus } from '../../types';
 import { AlertCircle, ArrowRight, Box, Shield, CheckCircle2, Clock } from 'lucide-react';
@@ -10,6 +11,7 @@ interface RecommendationCardProps {
 import { useToast } from '../../contexts/ToastContext';
 
 export const RecommendationCard: React.FC<RecommendationCardProps> = ({ rec }) => {
+  const { id } = useParams<{ id: string }>();
   const [status, setStatus] = useState<RecommendationStatus>(rec.status);
   const [reviewedAt, setReviewedAt] = useState<string | undefined>(rec.reviewedAt);
   const { addToast } = useToast();
@@ -89,9 +91,12 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({ rec }) =
           )}
         </div>
         <div className="flex items-center gap-3">
-          <button className="text-sm font-medium text-slate-400 hover:text-slate-300 transition-colors">
+          <Link 
+            to={`/analyses/${id}/evidence`}
+            className="text-sm font-medium text-slate-400 hover:text-slate-300 transition-colors"
+          >
             View Evidence
-          </button>
+          </Link>
           <button 
             onClick={handleMarkReview}
             disabled={status === 'Completed'}

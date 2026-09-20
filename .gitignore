@@ -7,7 +7,7 @@ __pycache__/
 .vscode/
 .idea/
 *.log
-.aws/
-*.pem
-*.key
 
+# Frontend
+frontend/node_modules/
+frontend/dist/

@@ -74,14 +74,18 @@ export const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggleCollapse })
         <nav className="space-y-1 px-2">
           {navItems.map((item) => {
             const Icon = item.icon;
+            // Use end matching for /analyses so it doesn't stay active when child routes are active
+            const isEnd = item.to === '/analyses';
+            
             return (
               <NavLink
                 key={item.to}
                 to={item.to}
+                end={isEnd}
                 className={({ isActive }) =>
                   `flex items-center ${
                     collapsed ? 'justify-center py-2.5 px-2' : 'justify-between px-3 py-2'
-                  } rounded-md text-xs font-medium transition-all group ${
+                  } rounded-md text-xs font-medium transition-all group min-w-0 ${
                     isActive
                       ? 'bg-amber-500/15 text-amber-400 border border-amber-500/30 font-semibold'
                       : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/80 border border-transparent'
@@ -94,7 +98,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggleCollapse })
                   {!collapsed && <span className="truncate">{item.label}</span>}
                 </div>
                 {!collapsed && item.badge && (
-                  <span className="px-1.5 py-0.2 text-[10px] font-mono bg-slate-800 text-slate-300 rounded border border-slate-700">
+                  <span className="px-1.5 py-0.2 text-[10px] font-mono bg-slate-800 text-slate-300 rounded border border-slate-700 shrink-0 ml-2">
                     {item.badge}
                   </span>
                 )}

@@ -57,7 +57,7 @@ export const mockAnalyses: Analysis[] = [
     projectId: 'proj-checkout-core',
     prNumber: 248,
     prTitle: 'Optimize order processing database queries',
-    repository: 'infra-demo',
+    repository: 'swapnil1222589/InfraShift',
     branch: 'feature/query-optimization',
     targetBranch: 'main',
     commitSha: 'a83f21c',

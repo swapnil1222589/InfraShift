@@ -24,7 +24,7 @@ export const ChangeSummary: React.FC<ChangeSummaryProps> = ({ summary }) => {
       <div className="space-y-6">
         {/* Core Profile Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-          <div className="p-3 rounded-lg bg-slate-950/70 border border-slate-800">
+          <div className="p-3.5 rounded-lg bg-slate-950/70 border border-slate-800 hover:border-slate-700 hover:bg-slate-900/50 transition-colors">
             <span className="text-[10px] font-mono text-slate-500 uppercase block">Change Type</span>
             <span className="text-xs font-semibold text-amber-400 mt-1 block">
               {summary.changeType}
@@ -32,7 +32,7 @@ export const ChangeSummary: React.FC<ChangeSummaryProps> = ({ summary }) => {
             <span className="text-[10px] text-slate-400 mt-0.5 block">Access pattern update</span>
           </div>
 
-          <div className="p-3 rounded-lg bg-slate-950/70 border border-slate-800">
+          <div className="p-3.5 rounded-lg bg-slate-950/70 border border-slate-800 hover:border-slate-700 hover:bg-slate-900/50 transition-colors">
             <span className="text-[10px] font-mono text-slate-500 uppercase block">Estimated Blast Radius</span>
             <span className="text-xs font-mono font-semibold text-orange-400 uppercase mt-1 block">
               {summary.blastRadius}
@@ -40,7 +40,7 @@ export const ChangeSummary: React.FC<ChangeSummaryProps> = ({ summary }) => {
             <span className="text-[10px] text-slate-400 mt-0.5 block">Isolated to checkout domain</span>
           </div>
 
-          <div className="p-3 rounded-lg bg-slate-950/70 border border-slate-800">
+          <div className="p-3.5 rounded-lg bg-slate-950/70 border border-slate-800 hover:border-slate-700 hover:bg-slate-900/50 transition-colors">
             <span className="text-[10px] font-mono text-slate-500 uppercase block">Affected AWS Services</span>
             <span className="text-xs font-semibold text-sky-400 mt-1 block truncate">
               {summary.primaryAffectedService}
@@ -48,7 +48,7 @@ export const ChangeSummary: React.FC<ChangeSummaryProps> = ({ summary }) => {
             <span className="text-[10px] text-slate-400 mt-0.5 block">Amazon DynamoDB & Lambda</span>
           </div>
 
-          <div className="p-3 rounded-lg bg-slate-950/70 border border-slate-800">
+          <div className="p-3.5 rounded-lg bg-slate-950/70 border border-slate-800 hover:border-slate-700 hover:bg-slate-900/50 transition-colors">
             <span className="text-[10px] font-mono text-slate-500 uppercase block">Changed Functions</span>
             <span className="text-xs font-mono font-semibold text-slate-200 mt-1 block">
               {summary.changedFunctionsCount} functions modified

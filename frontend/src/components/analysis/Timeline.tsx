@@ -19,11 +19,11 @@ export const Timeline: React.FC<TimelineProps> = ({ steps }) => {
         <span className="text-[10px] font-mono text-slate-500">Total duration: 6,722ms</span>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+      <div className="flex overflow-x-auto pb-2 -mb-2 gap-3 snap-x scrollbar-thin scrollbar-thumb-slate-800 scrollbar-track-transparent">
         {steps.map((step, idx) => (
           <div
             key={step.id}
-            className="p-3 rounded-lg bg-slate-950/80 border border-slate-800 hover:border-slate-700 transition flex flex-col justify-between group relative"
+            className="w-[200px] lg:flex-1 shrink-0 snap-start p-3.5 rounded-lg bg-slate-950/80 border border-slate-800 hover:border-slate-700 hover:bg-slate-900/50 transition-all flex flex-col justify-between group relative min-h-[140px]"
           >
             <div>
               <div className="flex items-center justify-between mb-2">

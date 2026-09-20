@@ -58,8 +58,8 @@ export const TabNav: React.FC<TabNavProps> = ({
   ];
 
   return (
-    <div className="border-b border-slate-800 bg-slate-950/70 -mx-6 px-6 pt-2 overflow-x-auto">
-      <div className="flex space-x-2 min-w-max">
+    <div className="border-b border-slate-800 bg-slate-950/70 -mx-4 md:-mx-6 px-4 md:px-6 pt-2 overflow-x-auto scrollbar-none w-[calc(100%+2rem)] md:w-[calc(100%+3rem)] max-w-none">
+      <div className="flex space-x-2 min-w-max pb-px">
         {tabs.map((tab) => {
           const Icon = tab.icon;
           return (
@@ -68,10 +68,10 @@ export const TabNav: React.FC<TabNavProps> = ({
               to={tab.to}
               end={tab.end}
               className={({ isActive }) =>
-                `flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium border-b-2 transition-all select-none ${
+                `flex items-center gap-2 px-4 py-3 text-[13px] font-medium border-b-2 transition-all select-none ${
                   isActive
-                    ? 'border-amber-500 text-amber-400 bg-amber-500/5'
-                    : 'border-transparent text-slate-400 hover:text-slate-200 hover:border-slate-700'
+                    ? 'border-amber-500 text-amber-400 bg-amber-500/10'
+                    : 'border-transparent text-slate-400 hover:text-slate-200 hover:border-slate-700 hover:bg-slate-900/50'
                 }`
               }
             >
