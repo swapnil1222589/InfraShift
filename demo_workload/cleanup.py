@@ -17,7 +17,15 @@ def cleanup_stack():
     print(f"=== InfraShift Demo Workload Cleanup ===")
     print(f"Deleting Stack: {STACK_NAME} in region: {REGION}")
 
-    cf_client = boto3.client("cloudformation", region_name=REGION)
+    from botocore.exceptions import NoCredentialsError, NoRegionError
+    
+    try:
+        cf_client = boto3.client("cloudformation", region_name=REGION)
+    except (NoCredentialsError, NoRegionError) as e:
+        print(f"[-] AWS CLI Error: Unable to locate credentials or region. Please run 'aws configure' first.")
+        print(f"    Details: {e}")
+        import sys
+        sys.exit(1)
 
     try:
         cf_client.delete_stack(StackName=STACK_NAME)

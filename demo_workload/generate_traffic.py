@@ -26,8 +26,15 @@ def generate_traffic(requests_count: int = 25, delay_seconds: float = 0.2, api_u
     print(f"Targeting: {api_url or FUNCTION_NAME}")
     print(f"Requests Count: {requests_count}")
 
-    user_ids = ["user-001", "user-002", "user-003", "non-existent-user"]
-    lambda_client = boto3.client("lambda", region_name=REGION) if not api_url else None
+    from botocore.exceptions import NoCredentialsError, NoRegionError
+    
+    try:
+        lambda_client = boto3.client("lambda", region_name=REGION) if not api_url else None
+    except (NoCredentialsError, NoRegionError) as e:
+        print(f"[-] AWS CLI Error: Unable to locate credentials or region. Please run 'aws configure' first.")
+        print(f"    Details: {e}")
+        import sys
+        sys.exit(1)
 
     successes = 0
     not_founds = 0

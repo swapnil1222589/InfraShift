@@ -37,10 +37,16 @@ def deploy_stack():
     with open(template_path, "r", encoding="utf-8") as f:
         template_body = f.read()
 
+    from botocore.exceptions import NoCredentialsError, NoRegionError
+
     print("[+] Validating CloudFormation template...")
     try:
         cf_client.validate_template(TemplateBody=template_body)
         print("[+] Template validation passed.")
+    except (NoCredentialsError, NoRegionError) as e:
+        print(f"[-] AWS CLI Error: Unable to locate credentials or region. Please run 'aws configure' first.")
+        print(f"    Details: {e}")
+        sys.exit(1)
     except ClientError as e:
         print(f"[-] CloudFormation validation failed: {e}")
         sys.exit(1)

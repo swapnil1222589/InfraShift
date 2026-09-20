@@ -40,9 +40,17 @@ SEED_USERS = [
 
 def seed_demo_users(table_name: str = TABLE_NAME, region: str = REGION) -> bool:
     """Populate DynamoDB table with seed users."""
+    from botocore.exceptions import NoCredentialsError, NoRegionError
+
     print(f"Connecting to DynamoDB table '{table_name}' in region '{region}'...")
     try:
         dynamodb = boto3.resource("dynamodb", region_name=region)
+    except (NoCredentialsError, NoRegionError) as e:
+        print(f"[-] AWS CLI Error: Unable to locate credentials or region. Please run 'aws configure' first.")
+        print(f"    Details: {e}")
+        return False
+        
+    try:
         table = dynamodb.Table(table_name)
 
         for user in SEED_USERS:

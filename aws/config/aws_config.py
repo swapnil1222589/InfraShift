@@ -63,6 +63,10 @@ class AWSConfig:
 
             return boto3.Session(**kwargs)
         except (BotoCoreError, ClientError) as e:
+            from botocore.exceptions import NoCredentialsError, NoRegionError
+            if isinstance(e, (NoCredentialsError, NoRegionError)):
+                logger.error("AWS CLI Error: Missing credentials or region. Run 'aws configure'.")
+                raise ValueError(f"AWS CLI Error: Missing credentials or region. Run 'aws configure'.") from e
             logger.error("Failed to create boto3 Session: %s", str(e))
             raise ValueError(f"AWS Session creation failed: {e}") from e
 
