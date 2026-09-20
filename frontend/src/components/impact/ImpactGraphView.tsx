@@ -119,14 +119,14 @@ export const ImpactGraphView: React.FC<ImpactGraphViewProps> = ({ data }) => {
       </div>
 
       {/* Main Grid: Visual Graph + Details Panel */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start w-full max-w-full min-w-0">
         {/* Visual Graph Canvas */}
         <div
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseUp}
-          className={`lg:col-span-7 bg-slate-950/90 border border-slate-800 rounded-xl p-6 relative overflow-hidden min-h-[580px] flex flex-col justify-center items-center select-none shadow-inner ${
+          className={`lg:col-span-7 bg-slate-950/90 border border-slate-800 rounded-xl p-6 relative overflow-hidden min-h-[580px] w-full max-w-full min-w-0 flex flex-col justify-center items-center select-none shadow-inner ${
             isDragging ? 'cursor-grabbing' : 'cursor-grab'
           }`}
         >

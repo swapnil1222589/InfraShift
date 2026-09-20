@@ -20,12 +20,12 @@ export const Layout: React.FC = () => {
         onOpenAnalyzeModal={() => setIsAnalyzeModalOpen(true)}
       />
 
-      <div className="flex-1 flex overflow-hidden">
+      <div className="flex-1 flex overflow-hidden w-full max-w-full min-w-0">
         <Sidebar
           collapsed={isSidebarCollapsed}
           onToggleCollapse={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
         />
-        <main className="flex-1 overflow-y-auto bg-slate-950/60 p-6">
+        <main className="flex-1 min-w-0 w-full max-w-full overflow-y-auto bg-slate-950/60 p-4 md:p-6">
           <div className="max-w-7xl mx-auto space-y-6">
             <Outlet context={{ currentProjectId, currentEnvId, openAnalyzeModal: () => setIsAnalyzeModalOpen(true) }} />
           </div>
