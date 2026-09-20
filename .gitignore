@@ -7,3 +7,7 @@ __pycache__/
 .vscode/
 .idea/
 *.log
+.aws/
+*.pem
+*.key
+

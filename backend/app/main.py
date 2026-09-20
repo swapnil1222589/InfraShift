@@ -63,7 +63,7 @@ async def lifespan(app: FastAPI):  # noqa: ANN201
 async def pydantic_validation_handler(request: Request, exc: ValidationError) -> JSONResponse:
     request_id = getattr(request.state, "request_id", "-")
     return JSONResponse(
-        status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+        status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
         content=error_response(
             "VALIDATION_ERROR",
             "Request validation failed",

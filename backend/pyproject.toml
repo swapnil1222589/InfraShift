@@ -34,3 +34,8 @@ testpaths = ["tests"]
 markers = [
     "aws: tests that require real AWS credentials (LIVE_AWS=true)",
 ]
+
+[tool.pyright]
+extraPaths = ["..", "."]
+pythonVersion = "3.11"
+

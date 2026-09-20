@@ -1,8 +1,12 @@
 import os
 import sys
 
-# Ensure workspace root is in sys.path so 'aws' module can be imported
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+_WORKSPACE_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+_BACKEND_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _WORKSPACE_ROOT not in sys.path:
+    sys.path.insert(0, _WORKSPACE_ROOT)
+if _BACKEND_ROOT not in sys.path:
+    sys.path.insert(0, _BACKEND_ROOT)
 
 import pytest
 from fastapi.testclient import TestClient

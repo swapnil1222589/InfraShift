@@ -11,12 +11,18 @@ Explicitly labels telemetry sources as REAL_AWS_TELEMETRY vs MOCK_DATA_LOCAL_DEV
 """
 
 import os
+import sys
 import uuid
 import logging
 from datetime import datetime, timedelta, timezone
 from typing import Dict, List, Optional, Any
 from fastapi import APIRouter, HTTPException, status
 from pydantic import BaseModel, Field
+
+# Ensure workspace root is in sys.path for importing 'aws' package
+_WORKSPACE_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+if _WORKSPACE_ROOT not in sys.path:
+    sys.path.insert(0, _WORKSPACE_ROOT)
 
 from aws.config.aws_config import AWSConfig
 from aws.telemetry.telemetry_loop import TelemetryLoopService

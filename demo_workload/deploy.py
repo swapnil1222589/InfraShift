@@ -107,8 +107,11 @@ def deploy_stack():
         print(f"[-] Failed to update Lambda code: {e}")
 
     # 4. Seed DynamoDB Data
-    from seed_data import seed_demo_users
-    seed_demo_users(region=REGION)
+    if not os.getenv("SKIP_SEEDING"):
+        from seed_data import seed_demo_users
+        seed_demo_users(region=REGION)
+    else:
+        print("[=] SKIP_SEEDING set. Skipping DynamoDB data population.")
 
     # 5. Output Resource Summary
     outputs = cf_client.describe_stacks(StackName=STACK_NAME)["Stacks"][0].get("Outputs", [])
