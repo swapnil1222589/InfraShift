@@ -42,7 +42,7 @@ GitHub PR  →  InfraShift Backend  →  AI Analysis  →  Risk Report
 - [x] 92 passing tests
 - [x] Ruff linting clean
 
-## Local Setup
+## Local Setup   
 
 ```bash
 cd infrashift-backend/backend
