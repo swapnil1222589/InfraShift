@@ -9,7 +9,7 @@ def _create_project(client):
         "default_branch": "main",
         "aws_region": "us-east-1",
     })
-    assert resp.status_code == 201
+    assert resp.status_code == 201   
     return resp.json()["project_id"]
 
 
