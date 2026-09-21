@@ -1,5 +1,5 @@
 # InfraShift
-
+   
 ## Problem
 
 Engineering teams deploy code changes without knowing their infrastructure impact until **after** an incident occurs. Manual risk assessment is slow, error-prone, and doesn't scale with CI/CD velocity.
