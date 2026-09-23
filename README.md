@@ -3,7 +3,7 @@
 ## Problem
 
 Engineering teams deploy code changes without knowing their infrastructure impact until **after** an incident occurs. Manual risk assessment is slow, error-prone, and doesn't scale with CI/CD velocity.
-
+                       
 ## Solution
 
 InfraShift analyzes a GitHub Pull Request **before** deployment and returns:
