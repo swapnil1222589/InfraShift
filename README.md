@@ -7,7 +7,7 @@ Engineering teams deploy code changes without knowing their infrastructure impac
 ## Solution
 
 InfraShift analyzes a GitHub Pull Request **before** deployment and returns:
-- Predicted infrastructure risk (Low/Medium/High/Critical)
+- Predicted infrastructure risk (Low/Medium/High/Critical)               
 - AI-powered forecast (invocations, latency, error rate changes)
 - Recommended actions with evidence
 - Confidence scores with uncertainty flags
